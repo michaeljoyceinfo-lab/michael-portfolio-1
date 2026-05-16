@@ -577,57 +577,107 @@ function RuptureViewer({ onClose }) {
         </WindowBar>
 
         <div className="h-[calc(100vh-44px)] overflow-y-auto p-5 pb-24 md:p-10 md:pb-32">
-          <div className="relative mb-10 overflow-hidden border border-cyan-200/10">
-            <div className="h-[420px] w-full bg-[radial-gradient(circle_at_center,rgba(103,232,249,0.22),rgba(15,23,42,0.85)_40%,rgba(0,0,0,1))]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#05070d] via-[#05070d]/70 to-black/40" />
-            <div className="absolute inset-x-0 bottom-0 grid items-end gap-8 p-8 lg:grid-cols-[1fr_420px]">
-              <div>
+          <div className="relative mb-10 overflow-hidden border border-cyan-200/10 bg-black/25">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_45%,rgba(103,232,249,0.16),transparent_35%),linear-gradient(135deg,rgba(15,23,42,0.9),rgba(0,0,0,0.92))]" />
+            <div className="relative grid min-h-[520px] items-center gap-10 p-8 lg:grid-cols-[1.05fr_0.95fr] lg:p-12">
+              <div className="relative z-10 max-w-4xl">
                 <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-cyan-200">CASE FILE // RUPTURE</p>
-                <h1 className="title-tech mt-4 text-6xl text-white md:text-8xl xl:text-9xl">RUPTURE</h1>
-                <p className="mt-6 max-w-3xl text-sm leading-8 text-slate-300 md:text-base">
+                <h1 className="title-tech mt-5 text-6xl leading-[0.9] text-white md:text-8xl xl:text-9xl">RUPTURE</h1>
+                <p className="mt-7 max-w-3xl text-sm leading-8 text-slate-300 md:text-base">
                   Award winning sci-fi arcade shooter developed in Unreal Engine. Built around maze navigation, environmental pressure, enemy pursuit systems, and cinematic atmosphere within the frozen tunnel systems of Titan.
                 </p>
+                <div className="mt-7 flex flex-wrap gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-100">
+                  <span className="border border-cyan-200/15 bg-cyan-200/[0.06] px-3 py-2">UNREAL ENGINE</span>
+                  <span className="border border-cyan-200/15 bg-cyan-200/[0.06] px-3 py-2">3D ART</span>
+                  <span className="border border-cyan-200/15 bg-cyan-200/[0.06] px-3 py-2">GAME DESIGN</span>
+                </div>
               </div>
-              <div className="hidden translate-y-8 lg:flex lg:items-end lg:justify-center">
+
+              <div className="relative z-10 hidden items-center justify-center lg:flex">
                 <img
                   src="/assets/rupture-poster.webp"
                   alt="Rupture poster art"
-                  className="max-h-[360px] w-auto object-contain drop-shadow-[0_0_40px_rgba(34,211,238,0.12)]"
+                  className="max-h-[430px] w-auto object-contain drop-shadow-[0_0_45px_rgba(34,211,238,0.16)]"
                 />
               </div>
             </div>
           </div>
 
-          <div className="mb-10 flex flex-wrap items-start justify-between gap-6 border-b border-cyan-200/10 pb-8">
+          <div className="mb-10 grid gap-6 border-b border-cyan-200/10 pb-8 xl:grid-cols-[1fr_360px]">
             <div>
               <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-cyan-200">PROJECT OVERVIEW</p>
               <h2 className="title-tech mt-4 text-3xl text-white md:text-5xl">RUPTURE</h2>
               <p className="mt-6 max-w-3xl text-sm leading-8 text-slate-300 md:text-base">
                 Winner of the 2020 GamesFleadh Award for Best 3D Art. Rupture is an intense sci-fi arcade shooter set on Titan's moon, where players take control of Jace Mercer as he navigates hostile tunnel systems, survives the Roth hive-mind species, and escapes increasingly dangerous environments.
               </p>
-            </div>
-            <div className="grid gap-3 border border-cyan-200/10 bg-black/30 p-5 font-mono text-xs uppercase tracking-[0.18em] text-slate-400">
-              <p>Status: Complete</p>
-              <p>Award: GamesFleadh 2020</p>
-              <p>Engine: Unreal Engine</p>
-              <p>Role: Game Design / 3D Art</p>
-              <p>Tech: Blueprint Scripting</p>
-            </div>
-          </div>
 
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {[
-              "Maze navigation and branching routes",
-              "Raycast enemy pursuit AI",
-              "Vehicle traversal gameplay sections",
-              "Boss encounters and arena design",
-              "Retro inspired HUD concepts",
-              "Halo and Gears inspired visual direction",
-            ].map((item) => (
-              <div key={item} className="border border-cyan-200/10 bg-black/25 p-5 text-sm leading-7 text-slate-300">
-                {item}
+              <div className="mt-8 grid gap-4 md:grid-cols-2">
+                {[
+                  "Maze navigation and branching routes",
+                  "Raycast enemy pursuit AI",
+                  "Vehicle traversal gameplay sections",
+                  "Boss encounters and arena design",
+                  "Retro inspired HUD concepts",
+                  "Halo and Gears inspired visual direction",
+                ].map((item) => (
+                  <div key={item} className="border border-cyan-200/10 bg-black/25 p-4 text-sm leading-7 text-slate-300">
+                    {item}
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <div className="border border-cyan-200/10 bg-black/25 p-5">
+              <div className="mb-5 flex items-center justify-between">
+                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-cyan-200">BUILD WIDGET</p>
+                <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-200" />
+              </div>
+
+              <div className="space-y-4 font-mono text-xs uppercase tracking-[0.16em] text-slate-400">
+                <div className="flex items-center justify-between border-b border-cyan-200/10 pb-3">
+                  <span>Status</span>
+                  <span className="text-cyan-200">Complete</span>
+                </div>
+                <div className="flex items-center justify-between border-b border-cyan-200/10 pb-3">
+                  <span>Award</span>
+                  <span className="text-cyan-200">GamesFleadh 2020</span>
+                </div>
+                <div className="flex items-center justify-between border-b border-cyan-200/10 pb-3">
+                  <span>Engine</span>
+                  <span className="text-cyan-200">Unreal Engine</span>
+                </div>
+                <div className="flex items-center justify-between border-b border-cyan-200/10 pb-3">
+                  <span>Role</span>
+                  <span className="text-cyan-200">Design / 3D Art</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span>Tech</span>
+                  <span className="text-cyan-200">Blueprints</span>
+                </div>
+              </div>
+
+              <div className="mt-6 border border-cyan-200/10 bg-slate-950/70 p-4">
+                <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-slate-500">Archive Signal</p>
+                <div className="mt-4 space-y-3">
+                  {["Art Direction", "Prototype", "Gameplay", "Presentation"].map((label, index) => (
+                    <div key={label}>
+                      <div className="mb-1 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.16em] text-slate-400">
+                        <span>{label}</span>
+                        <span className="text-cyan-200">{88 + index * 3}%</span>
+                      </div>
+                      <div className="h-1 border border-cyan-200/10 bg-black/60">
+                        <motion.div
+                          className="h-full bg-cyan-200"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${88 + index * 3}%` }}
+                          transition={{ duration: 1.2, delay: index * 0.08 }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="mx-auto mt-10 max-w-5xl border border-cyan-200/10 bg-black/20 p-5">
@@ -653,35 +703,62 @@ function RuptureViewer({ onClose }) {
             </button>
           </div>
 
-          <div className="mt-10">
-            <div className="mb-5 flex items-center justify-between">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-cyan-200">ARCHIVE GALLERY</p>
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">PROJECT MATERIAL</p>
-            </div>
-            <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-2 xl:grid-cols-3">
-              {ruptureGallery.map((item, index) => (
-                <motion.button
-                  key={item.title}
-                  type="button"
-                  onClick={() => openImageViewer(item)}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.04 }}
-                  className="group mx-auto w-full max-w-[360px] overflow-hidden border border-cyan-200/10 bg-black/30 text-left transition duration-300 hover:border-cyan-200/40 hover:bg-cyan-200/[0.04] hover:shadow-[0_0_24px_rgba(34,211,238,0.08)]"
-                >
-                  <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-slate-950">
-                    <img src={item.src} alt={`Rupture ${item.title}`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-cyan-200">{item.label}</p>
-                      <p className="mt-2 text-lg uppercase tracking-[0.12em] text-white">{item.title}</p>
-                    </div>
-                  </div>
-                  <div className="border-t border-cyan-200/10 p-4">
-                    <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200">{`ARCHIVE_CAPTURE_${String(index + 1).padStart(2, "0")}`}</p>
-                  </div>
-                </motion.button>
-              ))}
+          <div className="mt-10 overflow-hidden border border-cyan-200/10 bg-black/20">
+            <WindowBar icon={Grid2X2} title="Rupture Media Archive" />
+            <div className="grid gap-6 p-5 xl:grid-cols-[1fr_320px]">
+              <div>
+                <div className="mb-5 flex items-center justify-between">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-cyan-200">ARCHIVE GALLERY</p>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">PROJECT MATERIAL</p>
+                </div>
+                <div className="grid gap-4 md:grid-cols-2 2xl:grid-cols-3">
+                  {ruptureGallery.map((item, index) => (
+                    <motion.button
+                      key={item.title}
+                      type="button"
+                      onClick={() => openImageViewer(item)}
+                      initial={{ opacity: 0, y: 16 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.04 }}
+                      className="group overflow-hidden border border-cyan-200/10 bg-black/30 text-left transition duration-300 hover:border-cyan-200/40 hover:bg-cyan-200/[0.04] hover:shadow-[0_0_24px_rgba(34,211,238,0.08)]"
+                    >
+                      <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-slate-950">
+                        <img src={item.src} alt={`Rupture ${item.title}`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-cyan-200">{item.label}</p>
+                          <p className="mt-2 text-lg uppercase tracking-[0.12em] text-white">{item.title}</p>
+                        </div>
+                      </div>
+                      <div className="border-t border-cyan-200/10 p-4">
+                        <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-cyan-200">{`ARCHIVE_CAPTURE_${String(index + 1).padStart(2, "0")}`}</p>
+                      </div>
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
+
+              <aside className="border border-cyan-200/10 bg-slate-950/60 p-5">
+                <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-cyan-200">MEDIA INDEX</p>
+                <div className="mt-5 space-y-3">
+                  {ruptureGallery.slice(0, 6).map((item, index) => (
+                    <button
+                      key={item.title}
+                      type="button"
+                      onClick={() => openImageViewer(item)}
+                      className="flex w-full items-center justify-between border-b border-cyan-200/10 pb-3 text-left font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400 transition hover:text-cyan-100"
+                    >
+                      <span>{String(index + 1).padStart(2, "0")} // {item.title}</span>
+                      <span className="text-cyan-200">OPEN</span>
+                    </button>
+                  ))}
+                </div>
+
+                <div className="mt-6 border border-cyan-200/10 bg-black/35 p-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.24em] text-slate-500">Selected Asset</p>
+                  <p className="mt-3 text-sm uppercase tracking-[0.14em] text-slate-300">Click any tile to open the fullscreen carousel viewer.</p>
+                </div>
+              </aside>
             </div>
           </div>
         </div>
