@@ -750,10 +750,10 @@ function RuptureViewer({ onClose }) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-[1250] flex items-center justify-center bg-black/95 p-5 backdrop-blur-xl"
+              className="fixed inset-0 z-[1250] flex items-center justify-center bg-black/95 p-5 backdrop-blur-xl md:p-10"
             >
-              <div className="relative flex h-full w-full flex-col border border-cyan-200/15 bg-[#030712] shadow-[0_0_70px_rgba(34,211,238,0.16)]">
-                <div className="flex h-12 items-center justify-between border-b border-cyan-200/10 bg-slate-950/95 px-4">
+              <div className="relative flex max-h-[86vh] w-full max-w-5xl flex-col overflow-hidden border border-cyan-200/15 bg-[#030712] shadow-[0_0_70px_rgba(34,211,238,0.16)]">
+                <div className="flex h-12 shrink-0 items-center justify-between border-b border-cyan-200/10 bg-slate-950/95 px-4">
                   <div>
                     <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-cyan-200">TRAILER VIEWER</p>
                     <p className="text-xs uppercase tracking-[0.16em] text-slate-300">RUPTURE DEMO TRAILER</p>
@@ -768,7 +768,7 @@ function RuptureViewer({ onClose }) {
                 </div>
 
                 <div
-                  className="relative flex min-h-0 flex-1 items-center justify-center overflow-hidden bg-black p-5 md:p-10"
+                  className="relative flex min-h-0 flex-1 items-center justify-center overflow-hidden bg-black p-4 md:p-6"
                   onMouseEnter={() => setVideoHovered(true)}
                   onMouseLeave={() => setVideoHovered(false)}
                 >
@@ -776,13 +776,13 @@ function RuptureViewer({ onClose }) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1.2 }}
-                    className="relative w-full"
+                    className="relative mx-auto w-full max-w-4xl overflow-hidden border border-cyan-200/10 bg-black"
                   >
                     <video
                       src="/assets/rupture-demo-trailer.mp4"
                       controls={videoHovered}
                       autoPlay
-                      className="max-h-full w-full border border-cyan-200/10 bg-black"
+                      className="block max-h-[68vh] w-full object-contain bg-black"
                     />
 
                     <div className="pointer-events-none absolute inset-0 opacity-[0.14] mix-blend-screen">
@@ -1071,14 +1071,14 @@ export default function App() {
                       className="h-full w-full object-cover object-center grayscale-[10%] contrast-[1.05] brightness-[0.9] scale-[1.08]"
                     />
 
-                    <div className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-screen">
-                      <div className="h-full w-full bg-[linear-gradient(to_bottom,rgba(255,255,255,0.14)_1px,transparent_1px)] bg-[size:100%_4px]" />
+                    <div className="pointer-events-none absolute inset-0 opacity-[0.34] mix-blend-screen">
+                      <div className="h-full w-full bg-[linear-gradient(to_bottom,rgba(255,255,255,0.28)_1px,transparent_1px)] bg-[size:100%_3px]" />
                     </div>
 
                     <motion.div
                       animate={{ opacity: [0.03, 0.08, 0.04] }}
                       transition={{ duration: 0.2, repeat: Infinity, repeatType: "mirror" }}
-                      className="pointer-events-none absolute inset-0"
+                      className="pointer-events-none absolute inset-0 opacity-80"
                       style={{
                         backgroundImage: "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"140\" height=\"140\" viewBox=\"0 0 140 140\"%3E%3Cfilter id=\"n\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"1.1\" numOctaves=\"2\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"140\" height=\"140\" filter=\"url(%23n)\" opacity=\"0.35\"/%3E%3C/svg%3E')",
                         backgroundSize: "180px 180px",
@@ -1105,11 +1105,13 @@ export default function App() {
                 ))}
               </div>
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <Button className="rounded-none border border-cyan-100/30 bg-cyan-200 text-slate-950 shadow-[0_0_16px_rgba(103,232,249,0.10)] hover:bg-cyan-100">
-                  <Download className="mr-2 h-4 w-4" /> DOWNLOAD CV
+                <Button className="inline-flex h-11 items-center justify-center gap-2 rounded-none border border-cyan-100/30 bg-cyan-200 px-5 font-mono text-xs uppercase tracking-[0.18em] text-slate-950 shadow-[0_0_16px_rgba(103,232,249,0.10)] transition hover:bg-cyan-100">
+                  <Download className="h-4 w-4 shrink-0" />
+                  <span>DOWNLOAD CV</span>
                 </Button>
-                <Button variant="outline" className="rounded-none border-cyan-200/20 bg-slate-900/70 hover:bg-cyan-200/10">
-                  <Mail className="mr-2 h-4 w-4" /> CONTACT
+                <Button className="inline-flex h-11 items-center justify-center gap-2 rounded-none border border-cyan-200/20 bg-slate-900/70 px-5 font-mono text-xs uppercase tracking-[0.18em] text-cyan-100 transition hover:bg-cyan-200/10">
+                  <Mail className="h-4 w-4 shrink-0" />
+                  <span>CONTACT</span>
                 </Button>
               </div>
             </div>
