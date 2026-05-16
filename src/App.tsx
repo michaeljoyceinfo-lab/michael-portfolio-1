@@ -580,19 +580,19 @@ function RuptureViewer({ onClose }) {
           <div className="relative mb-10 overflow-hidden border border-cyan-200/10">
             <div className="h-[420px] w-full bg-[radial-gradient(circle_at_center,rgba(103,232,249,0.22),rgba(15,23,42,0.85)_40%,rgba(0,0,0,1))]" />
             <div className="absolute inset-0 bg-gradient-to-t from-[#05070d] via-[#05070d]/70 to-black/40" />
-            <div className="absolute inset-x-0 bottom-0 grid items-end gap-6 p-8 lg:grid-cols-[1fr_360px]">
+            <div className="absolute inset-x-0 bottom-0 grid items-end gap-8 p-8 lg:grid-cols-[1fr_420px]">
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-cyan-200">CASE FILE // RUPTURE</p>
-                <h1 className="title-tech mt-4 text-5xl text-white md:text-7xl">RUPTURE</h1>
+                <h1 className="title-tech mt-4 text-6xl text-white md:text-8xl xl:text-9xl">RUPTURE</h1>
                 <p className="mt-6 max-w-3xl text-sm leading-8 text-slate-300 md:text-base">
                   Award winning sci-fi arcade shooter developed in Unreal Engine. Built around maze navigation, environmental pressure, enemy pursuit systems, and cinematic atmosphere within the frozen tunnel systems of Titan.
                 </p>
               </div>
-              <div className="hidden lg:flex lg:items-end lg:justify-end">
+              <div className="hidden translate-y-8 lg:flex lg:items-end lg:justify-center">
                 <img
                   src="/assets/rupture-poster.webp"
                   alt="Rupture poster art"
-                  className="h-[420px] w-auto object-contain drop-shadow-[0_0_40px_rgba(34,211,238,0.12)]"
+                  className="max-h-[360px] w-auto object-contain drop-shadow-[0_0_40px_rgba(34,211,238,0.12)]"
                 />
               </div>
             </div>
@@ -630,7 +630,7 @@ function RuptureViewer({ onClose }) {
             ))}
           </div>
 
-          <div className="mt-10 border border-cyan-200/10 bg-black/20 p-5">
+          <div className="mx-auto mt-10 max-w-5xl border border-cyan-200/10 bg-black/20 p-5">
             <div className="mb-4 flex items-center justify-between">
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-cyan-200">DEMO TRAILER</p>
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">GAMESFLEADH BUILD</p>
@@ -638,11 +638,11 @@ function RuptureViewer({ onClose }) {
             <button
               type="button"
               onClick={() => setVideoViewerOpen(true)}
-              className="group relative block w-full overflow-hidden border border-cyan-200/10 bg-black"
+              className="group relative mx-auto block w-full max-w-4xl overflow-hidden border border-cyan-200/10 bg-black"
             >
               <video
                 src="/assets/rupture-demo-trailer.mp4"
-                className="w-full transition duration-300 group-hover:scale-[1.01]"
+                className="block max-h-[420px] w-full object-contain transition duration-300 group-hover:scale-[1.01]"
                 muted
               />
               <div className="absolute inset-0 flex items-center justify-center bg-black/35 transition group-hover:bg-black/20">
@@ -658,7 +658,7 @@ function RuptureViewer({ onClose }) {
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-cyan-200">ARCHIVE GALLERY</p>
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">PROJECT MATERIAL</p>
             </div>
-            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            <div className="mx-auto grid max-w-6xl gap-4 md:grid-cols-2 xl:grid-cols-3">
               {ruptureGallery.map((item, index) => (
                 <motion.button
                   key={item.title}
@@ -667,7 +667,7 @@ function RuptureViewer({ onClose }) {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.04 }}
-                  className="group overflow-hidden border border-cyan-200/10 bg-black/30 text-left transition duration-300 hover:border-cyan-200/40 hover:bg-cyan-200/[0.04] hover:shadow-[0_0_24px_rgba(34,211,238,0.08)]"
+                  className="group mx-auto w-full max-w-[360px] overflow-hidden border border-cyan-200/10 bg-black/30 text-left transition duration-300 hover:border-cyan-200/40 hover:bg-cyan-200/[0.04] hover:shadow-[0_0_24px_rgba(34,211,238,0.08)]"
                 >
                   <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden bg-slate-950">
                     <img src={item.src} alt={`Rupture ${item.title}`} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
