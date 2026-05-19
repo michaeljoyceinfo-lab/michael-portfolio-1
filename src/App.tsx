@@ -501,7 +501,7 @@ function FileExplorer({ activeFolder, onSelect }) {
 function DiagnosticsPanel() {
   return (
     <div className="space-y-6">
-      <div className="relative overflow-hidden border border-cyan-200/10 bg-black/20 p-6 shadow-[0_0_14px_rgba(34,211,238,0.04)] transition duration-300 hover:border-cyan-200/20 hover:shadow-[0_0_22px_rgba(34,211,238,0.08)]">
+      <div className="relative overflow-hidden border border-cyan-200/10 bg-black/20 p-6 before:absolute before:left-0 before:top-0 before:h-px before:w-full before:bg-gradient-to-r before:from-transparent before:via-cyan-200/60 before:to-transparent after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-gradient-to-r after:from-transparent after:via-cyan-200/30 after:to-transparent shadow-[0_0_14px_rgba(34,211,238,0.04)] transition duration-300 hover:border-cyan-200/20 hover:shadow-[0_0_22px_rgba(34,211,238,0.08)]">
         <div className="mb-5 flex items-center justify-between">
           <p className="text-xs uppercase tracking-[0.24em] text-slate-400">System Diagnostics</p>
           <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-200" />
@@ -711,8 +711,8 @@ function RuptureViewer({ onClose }) {
             </button>
           </div>
 
-          <div className="mt-10 overflow-hidden border border-cyan-200/10 bg-black/20">
-            <WindowBar icon={Grid2X2} title="Rupture Media Archive" />
+          <div className="relative mt-10 overflow-hidden border border-cyan-200/10 bg-black/20 before:absolute before:left-0 before:top-0 before:h-px before:w-full before:bg-gradient-to-r before:from-transparent before:via-cyan-200/60 before:to-transparent after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-gradient-to-r after:from-transparent after:via-cyan-200/30 after:to-transparent">
+            <WindowBar icon={Grid2X2} title="Rupture Media Archive" glow />
             <div className="grid gap-6 p-5 xl:grid-cols-[1fr_320px]">
               <div>
                 <div className="mb-5 flex items-center justify-between">
@@ -1156,8 +1156,8 @@ export default function App() {
                       className="h-full w-full object-cover object-center grayscale-[10%] contrast-[1.05] brightness-[0.9] scale-[1.08]"
                     />
 
-                    <div className="pointer-events-none absolute inset-0 opacity-[0.34] mix-blend-screen">
-                      <div className="h-full w-full bg-[linear-gradient(to_bottom,rgba(255,255,255,0.28)_1px,transparent_1px)] bg-[size:100%_3px]" />
+                    <div className="pointer-events-none absolute inset-0 opacity-[0.58] mix-blend-screen">
+                      <div className="h-full w-full bg-[linear-gradient(to_bottom,rgba(120,255,255,0.42)_1px,rgba(255,255,255,0.12)_2px,transparent_3px)] bg-[size:100%_5px]" />
                     </div>
 
                     <motion.div
@@ -1169,6 +1169,9 @@ export default function App() {
                         backgroundSize: "180px 180px",
                       }}
                     />
+
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.14),transparent_70%)] mix-blend-screen" />
+                    <div className="pointer-events-none absolute inset-0 bg-cyan-200/[0.04] mix-blend-screen" />
 
                     <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,rgba(0,0,0,0.45)_100%)]" />
 
