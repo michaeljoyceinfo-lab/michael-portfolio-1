@@ -581,15 +581,26 @@ function RuptureViewer({ onClose }) {
             <img
               src="/assets/rupture-level-concept-4.webp"
               alt="Rupture level concept background"
-              className="absolute inset-0 h-full w-full scale-[1.04] object-cover object-center opacity-[0.42]"
+              className="absolute inset-0 h-full w-full scale-[1.02] object-cover object-center opacity-[0.58]"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#05070d]/98 via-[#05070d]/78 to-[#05070d]/15" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/90 via-transparent to-black/35" />
-            <div className="absolute left-0 top-0 h-full w-[55%] backdrop-blur-[5px]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_40%,rgba(103,232,249,0.08),transparent_28%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.55)_100%)]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#05070d]/96 via-[#05070d]/58 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/92 via-transparent to-black/20" />
 
-            <div className="relative z-10 flex min-h-[520px] items-center px-8 py-10 md:px-14 md:py-14">
+            <div
+              className="absolute left-0 top-0 h-full w-[48%]"
+              style={{
+                backdropFilter: "blur(10px)",
+                WebkitBackdropFilter: "blur(10px)",
+                maskImage: "linear-gradient(to right, black 0%, black 72%, transparent 100%)",
+                WebkitMaskImage: "linear-gradient(to right, black 0%, black 72%, transparent 100%)",
+                background: "linear-gradient(to right, rgba(5,7,13,0.38), rgba(5,7,13,0.04))",
+              }}
+            />
+
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_38%,rgba(103,232,249,0.10),transparent_24%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_52%,rgba(0,0,0,0.48)_100%)]" />
+
+            <div className="relative z-10 flex min-h-[520px] items-center px-8 py-10 md:px-16 md:py-16">
               <div className="max-w-5xl">
                 <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-cyan-200">CASE FILE // RUPTURE</p>
                 <h1 className="title-tech mt-5 text-6xl leading-[0.9] text-white md:text-8xl xl:text-9xl">RUPTURE</h1>
