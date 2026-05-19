@@ -577,28 +577,23 @@ function RuptureViewer({ onClose }) {
         </WindowBar>
 
         <div className="h-[calc(100vh-44px)] overflow-y-auto p-5 pb-24 md:p-10 md:pb-32">
-          <div className="relative mb-10 overflow-hidden border border-cyan-200/10 bg-black/25">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_45%,rgba(103,232,249,0.16),transparent_35%),linear-gradient(135deg,rgba(15,23,42,0.9),rgba(0,0,0,0.92))]" />
-            <div className="relative grid min-h-[520px] items-center gap-10 p-8 lg:grid-cols-[1.05fr_0.95fr] lg:p-12">
-              <div className="relative z-10 max-w-4xl">
+          <div className="relative mb-10 min-h-[520px] overflow-hidden border border-cyan-200/10 bg-black/35">
+            <img
+              src="/assets/rupture-level-concept-4.webp"
+              alt="Rupture level concept background"
+              className="absolute inset-0 h-full w-full scale-[1.08] object-cover opacity-35 blur-[5px]"
+            />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(103,232,249,0.08),rgba(0,0,0,0.7)_55%,rgba(0,0,0,0.92)_100%)]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#05070d]/95 via-[#05070d]/70 to-[#05070d]/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#05070d] via-transparent to-black/40" />
+
+            <div className="relative z-10 flex min-h-[520px] items-center p-8 md:p-12">
+              <div className="max-w-5xl">
                 <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-cyan-200">CASE FILE // RUPTURE</p>
                 <h1 className="title-tech mt-5 text-6xl leading-[0.9] text-white md:text-8xl xl:text-9xl">RUPTURE</h1>
                 <p className="mt-7 max-w-3xl text-sm leading-8 text-slate-300 md:text-base">
                   Award winning sci-fi arcade shooter developed in Unreal Engine. Built around maze navigation, environmental pressure, enemy pursuit systems, and cinematic atmosphere within the frozen tunnel systems of Titan.
                 </p>
-                <div className="mt-7 flex flex-wrap gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-cyan-100">
-                  <span className="border border-cyan-200/15 bg-cyan-200/[0.06] px-3 py-2">UNREAL ENGINE</span>
-                  <span className="border border-cyan-200/15 bg-cyan-200/[0.06] px-3 py-2">3D ART</span>
-                  <span className="border border-cyan-200/15 bg-cyan-200/[0.06] px-3 py-2">GAME DESIGN</span>
-                </div>
-              </div>
-
-              <div className="relative z-10 hidden items-center justify-center lg:flex">
-                <img
-                  src="/assets/rupture-poster.webp"
-                  alt="Rupture poster art"
-                  className="max-h-[430px] w-auto object-contain drop-shadow-[0_0_45px_rgba(34,211,238,0.16)]"
-                />
               </div>
             </div>
           </div>
@@ -741,14 +736,14 @@ function RuptureViewer({ onClose }) {
               <aside className="border border-cyan-200/10 bg-slate-950/60 p-5">
                 <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-cyan-200">MEDIA INDEX</p>
                 <div className="mt-5 space-y-3">
-                  {ruptureGallery.slice(0, 6).map((item, index) => (
+                  {ruptureGallery.map((item, index) => (
                     <button
                       key={item.title}
                       type="button"
                       onClick={() => openImageViewer(item)}
                       className="flex w-full items-center justify-between border-b border-cyan-200/10 pb-3 text-left font-mono text-[10px] uppercase tracking-[0.14em] text-slate-400 transition hover:text-cyan-100"
                     >
-                      <span>{String(index + 1).padStart(2, "0")} // {item.title}</span>
+                      <span className="truncate pr-3">{String(index + 1).padStart(2, "0")} // {item.title}</span>
                       <span className="text-cyan-200">OPEN</span>
                     </button>
                   ))}
