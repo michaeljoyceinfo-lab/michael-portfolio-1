@@ -581,13 +581,15 @@ function RuptureViewer({ onClose }) {
             <img
               src="/assets/rupture-level-concept-4.webp"
               alt="Rupture level concept background"
-              className="absolute inset-0 h-full w-full scale-[1.08] object-cover opacity-35 blur-[5px]"
+              className="absolute inset-0 h-full w-full scale-[1.04] object-cover object-center opacity-[0.42]"
             />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,rgba(103,232,249,0.08),rgba(0,0,0,0.7)_55%,rgba(0,0,0,0.92)_100%)]" />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#05070d]/95 via-[#05070d]/70 to-[#05070d]/40" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#05070d] via-transparent to-black/40" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#05070d]/98 via-[#05070d]/78 to-[#05070d]/15" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#05070d]/90 via-transparent to-black/35" />
+            <div className="absolute left-0 top-0 h-full w-[55%] backdrop-blur-[5px]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_40%,rgba(103,232,249,0.08),transparent_28%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_45%,rgba(0,0,0,0.55)_100%)]" />
 
-            <div className="relative z-10 flex min-h-[520px] items-center p-8 md:p-12">
+            <div className="relative z-10 flex min-h-[520px] items-center px-8 py-10 md:px-14 md:py-14">
               <div className="max-w-5xl">
                 <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-cyan-200">CASE FILE // RUPTURE</p>
                 <h1 className="title-tech mt-5 text-6xl leading-[0.9] text-white md:text-8xl xl:text-9xl">RUPTURE</h1>
