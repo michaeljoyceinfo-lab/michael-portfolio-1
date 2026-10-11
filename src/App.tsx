@@ -15,6 +15,7 @@ import {
   Terminal,
 } from "lucide-react";
 import { Button } from "./ui/button";
+import { CVViewer, ContactTerminal } from "./PortfolioDialogs";
 import { Card, CardContent } from "./ui/card";
 
 const portfolioPath = "C:\\Users\\Michael\\Portfolio";
@@ -1061,6 +1062,8 @@ export default function App() {
   const [booted, setBooted] = useState(false);
   const [terminalIndex, setTerminalIndex] = useState(0);
   const [ruptureOpen, setRuptureOpen] = useState(false);
+  const [cvOpen, setCvOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
   const [ruptureLoading, setRuptureLoading] = useState(false);
 
   useEffect(() => {
@@ -1193,13 +1196,13 @@ export default function App() {
                 ))}
               </div>
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <Button onClick={() => mountFolder(folders[0])} className="inline-flex h-11 items-center justify-center gap-2 rounded-none border border-cyan-100/30 bg-cyan-200 px-5 font-mono text-xs uppercase tracking-[0.18em] text-slate-950 shadow-[0_0_16px_rgba(103,232,249,0.10)] transition hover:bg-cyan-100">
+                <Button onClick={() => setCvOpen(true)} className="inline-flex h-11 items-center justify-center gap-2 rounded-none border border-cyan-100/30 bg-cyan-200 px-5 font-mono text-xs uppercase tracking-[0.18em] text-slate-950 shadow-[0_0_16px_rgba(103,232,249,0.10)] transition hover:bg-cyan-100">
                   <Download className="h-4 w-4 shrink-0" />
-                  <span>VIEW CV ARCHIVE</span>
+                  <span>DOWNLOAD CV</span>
                 </Button>
-                <Button onClick={() => mountFolder(folders[0])} className="inline-flex h-11 items-center justify-center gap-2 rounded-none border border-cyan-200/20 bg-slate-900/70 px-5 font-mono text-xs uppercase tracking-[0.18em] text-cyan-100 transition hover:bg-cyan-200/10">
+                <Button onClick={() => setContactOpen(true)} className="inline-flex h-11 items-center justify-center gap-2 rounded-none border border-cyan-200/20 bg-slate-900/70 px-5 font-mono text-xs uppercase tracking-[0.18em] text-cyan-100 transition hover:bg-cyan-200/10">
                   <Mail className="h-4 w-4 shrink-0" />
-                  <span>PERSONNEL</span>
+                  <span>CONTACT</span>
                 </Button>
               </div>
             </div>
@@ -1223,6 +1226,8 @@ export default function App() {
         </section>
       </main>
 
+      {cvOpen ? <CVViewer onClose={() => setCvOpen(false)} /> : null}
+      {contactOpen ? <ContactTerminal onClose={() => setContactOpen(false)} /> : null}
       <AnimatePresence>{ruptureLoading ? <RuptureLoadingScreen /> : null}</AnimatePresence>
       <AnimatePresence>{ruptureOpen ? <RuptureViewer onClose={() => setRuptureOpen(false)} /> : null}</AnimatePresence>
 
