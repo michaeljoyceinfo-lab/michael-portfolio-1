@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Download, Mail, Send, X } from "lucide-react";
 
-type ModalProps = { onClose: () };
+type ModalProps = { onClose: () => void };
 
 const section = "mb-5 border-b border-cyan-200/20 pb-2 text-xs font-bold uppercase tracking-[0.2em] text-cyan-200";
 const field = "w-full rounded-none border border-cyan-200/25 bg-black/50 p-3 text-sm text-white outline-none placeholder:text-slate-500 focus:border-cyan-200";
