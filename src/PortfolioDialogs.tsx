@@ -67,7 +67,7 @@ export function ContactTerminal({ onClose }: ModalProps) {
         <label className="block text-xs tracking-widest text-cyan-200">TRANSMISSION<textarea className={field+" mt-2 min-h-32"} value={message} onChange={e=>setMessage(e.target.value)} placeholder="Enter your message..." required maxLength={4000}/></label>
         <button type="submit" className="flex w-full items-center justify-center gap-2 border border-cyan-200/40 bg-cyan-200 px-4 py-3 font-mono text-xs font-bold tracking-widest text-slate-950 hover:bg-cyan-100"><Send size={16}/> OPEN EMAIL TO TRANSMIT</button>
       </form>
-      <p className="mt-4 text-xs leading-relaxed text-slate-400">This opens your email application with the message prepared. Review and press Send there. The website does not send messages directly.</p>
+      <p className="mt-4 text-xs leading-relaxed text-slate-400">Your email application opens with the message prepared. Review it and press Send there; this website does not send emails directly.</p>
       <a href="mailto:michaeljoyceinfo@gmail.com" className="mt-3 inline-flex items-center gap-2 text-xs text-cyan-200 underline"><Mail size={14}/> michaeljoyceinfo@gmail.com</a>
     </div>
   </div>;
