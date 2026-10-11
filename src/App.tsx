@@ -1193,13 +1193,13 @@ export default function App() {
                 ))}
               </div>
               <div className="mt-7 flex flex-wrap items-center gap-3">
-                <Button className="inline-flex h-11 items-center justify-center gap-2 rounded-none border border-cyan-100/30 bg-cyan-200 px-5 font-mono text-xs uppercase tracking-[0.18em] text-slate-950 shadow-[0_0_16px_rgba(103,232,249,0.10)] transition hover:bg-cyan-100">
+                <Button onClick={() => mountFolder(folders[0])} className="inline-flex h-11 items-center justify-center gap-2 rounded-none border border-cyan-100/30 bg-cyan-200 px-5 font-mono text-xs uppercase tracking-[0.18em] text-slate-950 shadow-[0_0_16px_rgba(103,232,249,0.10)] transition hover:bg-cyan-100">
                   <Download className="h-4 w-4 shrink-0" />
-                  <span>DOWNLOAD CV</span>
+                  <span>VIEW CV ARCHIVE</span>
                 </Button>
-                <Button className="inline-flex h-11 items-center justify-center gap-2 rounded-none border border-cyan-200/20 bg-slate-900/70 px-5 font-mono text-xs uppercase tracking-[0.18em] text-cyan-100 transition hover:bg-cyan-200/10">
+                <Button onClick={() => mountFolder(folders[0])} className="inline-flex h-11 items-center justify-center gap-2 rounded-none border border-cyan-200/20 bg-slate-900/70 px-5 font-mono text-xs uppercase tracking-[0.18em] text-cyan-100 transition hover:bg-cyan-200/10">
                   <Mail className="h-4 w-4 shrink-0" />
-                  <span>CONTACT</span>
+                  <span>PERSONNEL</span>
                 </Button>
               </div>
             </div>
@@ -1208,7 +1208,7 @@ export default function App() {
         </header>
 
         <section className="grid items-start gap-5 transition duration-300 lg:grid-cols-[340px_1fr]">
-          <FileExplorer activeFolder={activeFolder || pendingFolder} onSelect={mountFolder} />
+          <div id="archive-navigator" className="scroll-mt-6"><FileExplorer activeFolder={activeFolder || pendingFolder} onSelect={mountFolder} /></div>
           <div className="relative">
             <AnimatePresence mode="wait">
               {pendingFolder ? (
@@ -1229,6 +1229,7 @@ export default function App() {
       <div className="fixed bottom-0 left-0 right-0 z-20 flex h-14 items-center justify-between border-t border-cyan-200/15 bg-slate-950/85 px-3 shadow-[0_-4px_24px_rgba(0,0,0,0.35)] backdrop-blur-xl transition duration-300 md:px-6">
         <div className="flex h-full items-center gap-3">
           <button
+            onClick={() => document.getElementById("archive-navigator")?.scrollIntoView({ behavior: "smooth", block: "start" })}
             className="flex h-10 w-10 shrink-0 items-center justify-center border border-cyan-200/15 bg-cyan-200/10 transition hover:bg-cyan-200/20"
             aria-label="Open portfolio menu"
           >
@@ -1247,7 +1248,7 @@ export default function App() {
         </div>
         <div className="flex h-full items-center gap-3 font-mono text-xs text-slate-400">
           <span className="h-2 w-2 shrink-0 animate-pulse rounded-full bg-cyan-200" />
-          <span className="whitespace-nowrap">15:26 · WAYPOINT LINK ACTIVE</span>
+          <span className="hidden whitespace-nowrap sm:inline">WAYPOINT LINK ACTIVE</span>
         </div>
       </div>
     </div>
